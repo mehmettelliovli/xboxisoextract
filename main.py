@@ -3,7 +3,7 @@ from tkinter import filedialog, messagebox
 import subprocess
 import os
 
-# extract-xiso binary bu dosyanın bulunduğu klasörde
+# extract-xiso binary bu dosyanin bulunduğu klasörde
 EXTRACT_XISO_PATH = os.path.join(os.path.dirname(__file__), "extract-xiso")
 
 def select_iso():
@@ -20,7 +20,7 @@ def run_extract():
     out = output_path.get()
 
     if not iso or not out:
-        messagebox.showerror("Hata", "Lütfen hem ISO dosyasını hem de hedef klasörü seç.")
+        messagebox.showerror("Hata", "Lütfen hem ISO dosyasını hem de hedef klasörü seçin.")
         return
 
     if not os.path.exists(EXTRACT_XISO_PATH):
@@ -43,7 +43,7 @@ iso_path = tk.StringVar()
 output_path = tk.StringVar()
 
 # ISO Seç
-tk.Label(root, text="1. ISO Dosyasını Seç:").pack(anchor="w", padx=10, pady=(10, 0))
+tk.Label(root, text="1. ISO Dosyasini Seç:").pack(anchor="w", padx=10, pady=(10, 0))
 tk.Entry(root, textvariable=iso_path, width=65).pack(padx=10)
 tk.Button(root, text="Gözat", command=select_iso).pack(pady=5)
 
@@ -53,7 +53,7 @@ tk.Entry(root, textvariable=output_path, width=65).pack(padx=10)
 tk.Button(root, text="Gözat", command=select_output).pack(pady=5)
 
 # Extract Butonu
-tk.Button(root, text="ISO'yu Çıkar", command=run_extract,
+tk.Button(root, text="ISO'yu Çikar", command=run_extract,
           bg="#4CAF50", fg="white", width=20, height=2).pack(pady=10)
 
 root.mainloop()
